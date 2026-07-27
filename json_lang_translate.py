@@ -99,7 +99,8 @@ def main():
                         help="Target language code (e.g., 'de', 'fr')")
     parser.add_argument('--input', '--in', type=str, default=None,
                         help="Input JSON file path - .json file extension is optional")
-    parser.add_argument('--output', '--out', type=str, default=None, help="Output JSON file path - optional, will default to input_lang.json if not provided")
+    parser.add_argument('--output', '--out', type=str, default=None, help="Output JSON file path - \
+                        optional, will default to input_lang.json if not provided")
     args = parser.parse_args()
 
     if not args.lang or not args.input:
