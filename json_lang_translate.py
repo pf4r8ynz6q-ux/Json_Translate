@@ -97,6 +97,8 @@ def main():
     parser = argparse.ArgumentParser(description="Translate deeply nested JSON files.")
     parser.add_argument('--lang', '--l', type=str,
                         help="Target language code (e.g., 'de', 'fr')")
+    parser.add_argument('--in_lang', '--in_l', type=str, default='en',
+                        help="Source language code (default: 'en')")
     parser.add_argument('--input', '--in', type=str, default=None,
                         help="Input JSON file path - .json file extension is optional")
     parser.add_argument('--output', '--out', type=str, default=None, help="Output JSON file path - \
@@ -128,7 +130,7 @@ def main():
         print(f"Error: The input file '{input_path}' was not found.")
         sys.exit(1)
 
-    translator = GoogleTranslator(source='en', target=args.lang.lower())
+    translator = GoogleTranslator(source=args.in_lang.lower(), target=args.lang.lower())
 
     # Pre-calculate the total number of translation tasks
     job = TranslationJob(data, translator)

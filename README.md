@@ -1,6 +1,6 @@
 # JSON Language Translator
 
-A Python script designed to automatically translate text within deeply nested JSON structures. It is specifically tailored to find and translate values associated with `label` and `html` keys, making it ideal for localizing UI configurations, structured content, or web components. The input text is assumed to be in English.
+A Python script designed to automatically translate text within deeply nested JSON structures. It is specifically tailored to find and translate values associated with `label` and `html` keys, making it ideal for localizing UI configurations, structured content, or web components. By default, it translates from English to a target language, but it can be configured to translate from any language to any language.
 
 ## Features
 
@@ -20,13 +20,14 @@ A Python script designed to automatically translate text within deeply nested JS
 Run the script from the command line, providing the target language and input file.
 
 ```bash
-python json_lang_translate.py --lang <language_code> --input <input_file> [--output <output_file>]
+python json_lang_translate.py --lang <target_language> --input <input_file> [--in_lang <source_language>] [--output <output_file>]
 ```
 
 ### Arguments
 
 *   `--lang` / `--l` *(Required)*: The target language code (e.g., `de` for German, `fr` for French, `es` for Spanish).
 *   `--input` / `--in` *(Required)*: The path to your input JSON file. The `.json` extension is optional and will be appended if missing. The assumed input language is English.
+*   `--in_lang` / `-in_l` *(Optional)*: The source language code. Defaults to `en` unless specified. Allows for translation both to and from other Languages.
 *   `--output` / `--out` *(Optional)*: The path for the translated output file. If omitted, the script automatically generates a name based on the input file and target language (e.g., `data.json` translated to French becomes `data_fr.json`).
 
 ### Examples
