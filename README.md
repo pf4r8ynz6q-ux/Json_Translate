@@ -45,5 +45,4 @@ python json_lang_translate.py --lang de --input config.json --output ./locales/c
 ```
 
 ## Dependencies
-
 *   `deep-translator` (installed automatically upon first run if not found).
