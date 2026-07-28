@@ -57,5 +57,5 @@ docs/_build/
 # PyBuilder
 target/
 
-# Json data
-*.json
+# Json test data
+test_doc.json
